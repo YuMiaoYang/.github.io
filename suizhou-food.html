@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>随州美食 - 余淼洋的网页</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 配置Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            dark: '#1D2939',
+            light: '#F9FAFB',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-in-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { transform: 'translateY(20px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } }
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto { content-visibility: auto; }
+      .text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+      .transition-custom { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      .card-hover { @apply hover:shadow-lg hover:-translate-y-1 transition-custom; }
+    }
+  </style>
+</head>
+<body class="bg-light text-gray-800 font-sans antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-custom bg-white/90 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <a href="index.html" class="flex items-center space-x-2">
+          <span class="text-primary text-2xl font-bold">余淼洋的网页</span>
+        </a>
+        <!-- 桌面导航（6个子网页） -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="suizhou-overview.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州概览</a>
+          <a href="suizhou-culture.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州文化</a>
+          <a href="suizhou-attractions.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州景点</a>
+          <a href="suizhou-food.html" class="text-primary font-medium">随州美食</a>
+          <a href="suizhou-no2-high.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州二中</a>
+          <a href="hust.html" class="text-gray-600 hover:text-primary transition-custom font-medium">华中科技大学</a>
+        </nav>
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-600 hover:text-primary transition-custom">
+          <i class="fa fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="container mx-auto px-4 py-3 space-y-3">
+        <a href="suizhou-overview.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州概览</a>
+        <a href="suizhou-culture.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州文化</a>
+        <a href="suizhou-attractions.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州景点</a>
+        <a href="suizhou-food.html" class="block py-2 text-primary font-medium">随州美食</a>
+        <a href="suizhou-no2-high.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州二中</a>
+        <a href="hust.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">华中科技大学</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="pt-16 md:pt-20">
+    <!-- 页面标题区 -->
+    <section class="relative h-64 md:h-72 flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/id/1080/1920/1080" alt="随州美食背景" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-dark/30"></div>
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-dark mb-4 animate-fade-in text-shadow">随州美食</h1>
+        <nav class="flex items-center text-gray-700 animate-slide-up">
+          <a href="index.html" class="hover:text-primary transition-custom">首页</a>
+          <i class="fa fa-angle-right mx-2 text-sm"></i>
+          <span class="text-primary">随州美食</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 特色美食区（纯文字版） -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl font-bold text-dark mb-4">随州特色美食</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">传承千年的饮食文化，融合南北风味，让人回味无穷</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 拐子饭 -->
+          <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="flex items-center mb-3">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-3">早餐必备</span>
+              <h3 class="text-lg font-bold text-dark">拐子饭</h3>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              随州标志性早餐，精选猪大腿骨（俗称"拐子"），经清水浸泡去血沫后，加入八角、桂皮、香叶等十余种香料长时间卤制，直至肉质酥烂、卤香入骨。食用时搭配颗粒分明的白米饭，配上酸豆角、腌萝卜等爽口小菜，肥而不腻、咸香入味，是随州人开启活力一天的经典选择。
+            </p>
+            <div class="flex justify-between text-gray-600 text-xs">
+              <span><i class="fa fa-map-marker text-primary mr-1"></i> 城区各老字号早餐店</span>
+              <span>15-25元/份</span>
+            </div>
+          </div>
+
+          <!-- 广水滑肉 -->
+          <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="flex items-center mb-3">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-3">传统名菜</span>
+              <h3 class="text-lg font-bold text-dark">广水滑肉</h3>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              湖北十大名菜之一，源自随州市广水市。选用肥瘦相间的五花肉，切成均匀薄片，经淀粉、蛋清挂糊后过油滑至金黄，再加入高汤、姜片、葱段慢炖至肉质软嫩。成品色泽洁白、肉质滑嫩、汤汁鲜香，肥而不腻、入口即化，是宴席上的经典佳肴。
+            </p>
+            <div class="flex justify-between text-gray-600 text-xs">
+              <span><i class="fa fa-map-marker text-primary mr-1"></i> 广水市传统餐馆及城区各大酒店</span>
+              <span>40-60元/份</span>
+            </div>
+          </div>
+
+          <!-- 随州泡泡青 -->
+          <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="flex items-center mb-3">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-3">地方特产</span>
+              <h3 class="text-lg font-bold text-dark">随州泡泡青</h3>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              随州独有冬季蔬菜，因叶片表面布满细密的泡泡状凸起而得名。其生长于冬季低温环境，口感清甜脆嫩、纤维少，富含维生素和矿物质。常见做法为清炒，只需加入少许蒜末和盐调味，便能凸显其本身的清甜风味；也可用于做汤、涮火锅，口感鲜嫩爽口。
+            </p>
+            <div class="flex justify-between text-gray-600 text-xs">
+              <span><i class="fa fa-map-marker text-primary mr-1"></i> 各大农贸市场及餐馆</span>
+              <span>5-10元/斤</span>
+            </div>
+          </div>
+
+          <!-- 洪山鸡 -->
+          <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="flex items-center mb-3">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-3">地理标志产品</span>
+              <h3 class="text-lg font-bold text-dark">洪山鸡</h3>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              随县洪山镇特产，中国地理标志产品。洪山鸡体型中等，羽毛光亮，肉质细嫩紧实，富含蛋白质和多种氨基酸，脂肪含量低。最经典的做法是清炖，加入姜片、红枣慢炖1.5小时，汤汁清亮、鸡肉鲜香，营养丰富；也可红烧、爆炒，风味各异。
+            </p>
+            <div class="flex justify-between text-gray-600 text-xs">
+              <span><i class="fa fa-map-marker text-primary mr-1"></i> 洪山镇及城区特色餐馆</span>
+              <span>80-120元/只</span>
+            </div>
+          </div>
+
+          <!-- 随州春卷 -->
+          <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="flex items-center mb-3">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-3">节庆美食</span>
+              <h3 class="text-lg font-bold text-dark">随州春卷</h3>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              随州传统节庆小吃，尤其盛行于春节期间。选用薄如蝉翼的春卷皮，包裹猪肉末、韭菜、粉丝、胡萝卜等馅料，卷成细长条状，入热油锅中炸至金黄酥脆。成品外酥里嫩，咬开后香气四溢，内馅鲜香多汁，是宴请宾客、家庭聚餐的必备美食。
+            </p>
+            <div class="flex justify-between text-gray-600 text-xs">
+              <span><i class="fa fa-map-marker text-primary mr-1"></i> 各地餐馆及家庭自制</span>
+              <span>20-30元/份</span>
+            </div>
+          </div>
+
+          <!-- 吉阳大蒜 -->
+          <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100">
+            <div class="flex items-center mb-3">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm mr-3">地方特产</span>
+              <h3 class="text-lg font-bold text-dark">吉阳大蒜</h3>
+            </div>
+            <p class="text-gray-700 text-sm mb-3">
+              随县吉阳镇特产，已有千年种植历史。吉阳大蒜蒜头大、瓣匀、皮白、味浓，含有丰富的大蒜素，兼具调味和药用价值。可生食、凉拌，也可用于炒肉、炖菜，能去腥增香；晒干后制成蒜片、蒜粉，便于保存和携带，是馈赠亲友的佳品。
+            </p>
+            <div class="flex justify-between text-gray-600 text-xs">
+              <span><i class="fa fa-map-marker text-primary mr-1"></i> 吉阳镇及各大农贸市场</span>
+              <span>8-15元/斤</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 美食小贴士（压缩） -->
+        <div class="mt-12 bg-gray-50 rounded-xl p-6 shadow-sm">
+          <h3 class="text-xl font-bold text-dark mb-4 flex items-center">
+            <i class="fa fa-lightbulb-o text-primary mr-2"></i>美食小贴士
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+              <p class="text-gray-700 text-sm">
+                拐子饭推荐店铺：随州老火车站附近的老字号拐子饭店，卤制时间足，肉质软烂，搭配的小菜种类丰富，性价比高。
+              </p>
+            </div>
+            <div class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+              <p class="text-gray-700 text-sm">
+                泡泡青最佳食用期为11月至次年2月，此时经霜打后口感更甜、纤维更细，是随州人冬季餐桌上的必备蔬菜。
+              </p>
+            </div>
+            <div class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+              <p class="text-gray-700 text-sm">
+                广水滑肉制作工艺复杂，需经过挂糊、滑油、慢炖等多道工序，建议前往广水市的传统餐馆品尝，风味更地道。
+              </p>
+            </div>
+            <div class="flex items-start">
+              <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+              <p class="text-gray-700 text-sm">
+                吉阳大蒜可作为伴手礼，选购时优先选择蒜头饱满、无破损、气味浓郁的，晒干后密封保存，可存放半年以上。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="text-xl font-bold mb-4">余淼洋的网页</h3>
+      <p class="text-gray-500">&copy; 2024 余淼洋的网页. 保留所有权利.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('shadow-md', window.scrollY > 50);
+      navbar.classList.toggle('shadow-sm', window.scrollY <= 50);
+    });
+  </script>
+</body>
+</html>

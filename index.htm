@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>余淼洋的网页</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 配置Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#36CFFB',
+            dark: '#1D2939',
+            light: '#F9FAFB',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+      .transition-custom {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  </style>
+</head>
+<body class="bg-light text-gray-800 font-sans antialiased">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full top-0 z-50 transition-custom bg-white/90 backdrop-blur-sm shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16 md:h-20">
+        <a href="index.html" class="flex items-center space-x-2">
+          <span class="text-primary text-2xl font-bold">余淼洋的网页</span>
+        </a>
+        
+        <!-- 桌面导航（6个子网页） -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="suizhou-overview.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州概览</a>
+          <a href="suizhou-culture.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州文化</a>
+          <a href="suizhou-attractions.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州景点</a>
+          <a href="suizhou-food.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州美食</a>
+          <a href="suizhou-no2-high.html" class="text-gray-600 hover:text-primary transition-custom font-medium">随州二中</a>
+          <a href="hust.html" class="text-gray-600 hover:text-primary transition-custom font-medium">华中科技大学</a>
+        </nav>
+        
+        <!-- 移动端菜单按钮 -->
+        <button id="menuBtn" class="md:hidden text-gray-600 hover:text-primary transition-custom">
+          <i class="fa fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="container mx-auto px-4 py-3 space-y-3">
+        <a href="suizhou-overview.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州概览</a>
+        <a href="suizhou-culture.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州文化</a>
+        <a href="suizhou-attractions.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州景点</a>
+        <a href="suizhou-food.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州美食</a>
+        <a href="suizhou-no2-high.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">随州二中</a>
+        <a href="hust.html" class="block py-2 text-gray-600 hover:text-primary transition-custom font-medium">华中科技大学</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="pt-16 md:pt-20">
+    <!-- 英雄区 -->
+    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/id/1036/1920/1080" alt="背景图" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-dark/40"></div>
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white mb-6 animate-fade-in text-shadow">余淼洋的网页</h1>
+        <p class="text-[clamp(1rem,2vw,1.25rem)] text-gray-100 max-w-2xl mx-auto mb-8 animate-fade-in" style="animation-delay: 0.2s">
+          记录家乡随州的风土人情，分享校园生活的精彩瞬间
+        </p>
+        <div class="animate-fade-in" style="animation-delay: 0.4s">
+          <a href="suizhou-overview.html" class="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-full transition-custom mr-4 mb-4 sm:mb-0">
+            探索随州
+          </a>
+          <a href="hust.html" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium px-8 py-3 rounded-full transition-custom border border-white/40">
+            走进华科
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 内容简介区（压缩内容） -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-dark mb-4">网页简介</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">6大核心板块，带你领略随州魅力与校园风采</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- 随州概览 -->
+          <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-map-marker text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dark mb-3">随州概览</h3>
+            <p class="text-gray-600 mb-4">了解随州的地理位置、历史沿革、行政区划与经济发展，感受这座城市的独特魅力。</p>
+            <a href="suizhou-overview.html" class="text-primary font-medium hover:underline flex items-center">
+              查看详情 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <!-- 随州文化 -->
+          <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-book text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dark mb-3">随州文化</h3>
+            <p class="text-gray-600 mb-4">探寻编钟文化、炎帝文化等千年传承，感受随州深厚的历史文化底蕴。</p>
+            <a href="suizhou-culture.html" class="text-primary font-medium hover:underline flex items-center">
+              查看详情 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <!-- 随州景点 -->
+          <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-camera text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dark mb-3">随州景点</h3>
+            <p class="text-gray-600 mb-4">打卡炎帝神农故里、大洪山等著名景点，领略自然与人文交融的美景。</p>
+            <a href="suizhou-attractions.html" class="text-primary font-medium hover:underline flex items-center">
+              查看详情 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <!-- 随州美食 -->
+          <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-cutlery text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dark mb-3">随州美食</h3>
+            <p class="text-gray-600 mb-4">品味拐子饭、广水滑肉等特色美食，感受随州饮食文化的独特风味。</p>
+            <a href="suizhou-food.html" class="text-primary font-medium hover:underline flex items-center">
+              查看详情 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <!-- 随州二中 -->
+          <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dark mb-3">随州二中</h3>
+            <p class="text-gray-600 mb-4">回忆高中校园生活，介绍学校历史、校园环境与教学特色。</p>
+            <a href="suizhou-no2-high.html" class="text-primary font-medium hover:underline flex items-center">
+              查看详情 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+          
+          <!-- 华中科技大学 -->
+          <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-custom">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fa fa-university text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-dark mb-3">华中科技大学</h3>
+            <p class="text-gray-600 mb-4">走进这所顶尖学府，了解学校概况、校园文化与学术氛围。</p>
+            <a href="hust.html" class="text-primary font-medium hover:underline flex items-center">
+              查看详情 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部简介（压缩） -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h3 class="text-2xl font-bold text-dark mb-4">关于我</h3>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          我是余淼洋，热爱家乡随州，也珍惜在华中科技大学的学习时光。
+          这个网页是我对生活的记录与分享，希望通过文字和图片，让更多人了解随州的美，感受校园的活力。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h3 class="text-xl font-bold mb-4">余淼洋的网页</h3>
+        <div class="flex justify-center space-x-6 mb-6">
+          <a href="#" class="text-gray-400 hover:text-white transition-custom">
+            <i class="fa fa-weibo text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-custom">
+            <i class="fa fa-wechat text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-custom">
+            <i class="fa fa-github text-xl"></i>
+          </a>
+        </div>
+        <p class="text-gray-500">&copy; 2024 余淼洋的网页. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+        navbar.classList.remove('shadow-sm');
+      } else {
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('shadow-sm');
+      }
+    });
+  </script>
+</body>
+</html>
